@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File 업로드</title>
+    
+</head>
+<body>
+    <h1>File 업로드</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+    {% for item in imageList %}
+    <a href="/uploads/{{ item.filename }}">
+         <img src="/{{ item.filename }}" style="width: 150px; height: 150px;"/>  해당페이지이동 
+    </a>
+    {% endfor%}
+</body>
+</html>
